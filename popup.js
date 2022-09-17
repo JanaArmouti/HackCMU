@@ -11,7 +11,7 @@ var greenButton = "on.png";
 //Points
 var pointsEarned = 0;
 
-chrome.storage.sync.get({points: pointsEarned}, function(data));
+chrome.storage.sync.get(["points"], function(data));
 
 button.addEventListener('click', event => { 
   buttonClicked = !buttonClicked;
