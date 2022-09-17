@@ -7,7 +7,7 @@ function isArticle(currentWebsite){
     if (currentWebsite.startsWith("https://www.bbc.com/news")){
         if (typeof currentWebsite[nameLen - 1] == Number){
             window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) {
+                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
                     alert("you're at the bottom of the page");
                     pageBottom = true;
                 }
@@ -18,7 +18,7 @@ function isArticle(currentWebsite){
     if (currentWebsite.startsWith("https://www.cnn.com")){
         if (currentWebsite.endsWith("/index.html")){
             window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) {
+                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
                     alert("you're at the bottom of the page");
                     pageBottom = true;
                 }
@@ -29,7 +29,7 @@ function isArticle(currentWebsite){
     if (currentWebsite.startsWith("https://www.nbcnews.com")){
         if (typeof currentWebsite[nameLen - 1] == Number){
             window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) {
+                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
                     alert("you're at the bottom of the page");
                     pageBottom = true;
                 }
