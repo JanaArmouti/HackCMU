@@ -2,15 +2,30 @@
 let button = document.getElementById("button");
 
 var buttonClicked = false;
-var clickedImg = "https://cdn2.vectorstock.com/i/1000x1000/60/61/big-red-button-vector-4006061.jpg"
+
+//Red button 
+var redButton = "https://images.app.goo.gl/ZybyzpXkXkd4bJrs7";
+//Green button
+var greenButton = "https://images.app.goo.gl/4P6wAEYt5W3WqfY5A";
 
 button.addEventListener('click', event => { 
   buttonClicked = !buttonClicked;
   if (buttonClicked) {
     beginReading();
   }
+  if (!buttonClicked) {
+    finishedReading();
+  }
 });
 
 function beginReading() {
-  document.getElementById("button").src = clickedImg;
+  //turn button red
+  document.getElementById("button").src = redButton;
+  //text box appears 
+}
+
+function finishedReading() {
+  //turn button green
+  document.getElementById("button").src = greenButton;
+  //text box saved as a memo
 }
