@@ -1,5 +1,5 @@
 //fetch the element
-let button = document.getElementById("button");
+var button = document.getElementById("button");
 
 var buttonClicked = false;
 
@@ -22,12 +22,10 @@ function beginReading() {
   //turn button red
   button.src = greenButton;
   //text box appears 
-  alert("begin reading");
 }
 
 function finishedReading() {
   //turn button green
   button.src = redButton;
   //text box saved as a memo
-  alert("finished reading");
 }
