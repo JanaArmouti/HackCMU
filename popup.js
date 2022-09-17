@@ -29,4 +29,5 @@ function finishedReading() {
   //turn button green
   button.src = redButton;
   //text box saved as a memo
+  alert("begin reading!");
 }
