@@ -1,9 +1,15 @@
 //fetch the element
 let button = document.getElementById("button");
+
+var buttonPressed = false;
+
 button.addEventListener('click', event => { 
-  test();
+  buttonPressed = !buttonPressed;
+  if (buttonPressed) {
+    beginReading();
+  }
 });
 
-function test() {
-  alert("the button has been pressed");
+function beginReading() {
+  alert("Begin Reading!");
 }
