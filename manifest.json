@@ -20,5 +20,5 @@
         "default_icon": "news.png"
     },
 
-    "permissions": ["storage", "activeTab", "scripting", "clipboardWrite"]
+    "permissions": ["storage", "activeTab", "scripting", "clipboardWrite", "tabs"]
 }
