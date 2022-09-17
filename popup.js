@@ -11,8 +11,7 @@ var greenButton = "on.png";
 //Points
 var pointsEarned = 0;
 
-chrome.storage.sync.set({points: 0}, function());
-console.log('Value is set to ' + pointsEarned);
+chrome.storage.sync.get({points: pointsEarned}, function(data));
 
 button.addEventListener('click', event => { 
   buttonClicked = !buttonClicked;
@@ -35,8 +34,8 @@ function finishedReading() {
   button.src = redButton;
   //text box saved as a memo
   //increment points
-  chrome.storage.sync.get(['points'], function(result) {
-    pointsEarned = result.points;
+  chrome.storage.sync.get(['points'], function(data) {
+    pointsEarned = data.points;
   });
   chrome.storage.sync.set({points: 0}, function() {
     pointsEarned = pointsEarned + 10;
