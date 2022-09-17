@@ -13,5 +13,4 @@ button.addEventListener('click', event => {
 
 function beginReading() {
   document.getElementById("button").src = clickedImg;
-  alert("Begin Reading!");
 }
