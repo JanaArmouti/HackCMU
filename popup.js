@@ -8,6 +8,12 @@ var redButton = "off.png";
 //Green button
 var greenButton = "on.png";
 
+//Points
+var pointsEarned = 0;
+
+chrome.storage.sync.set({points: 0}, function());
+console.log('Value is set to ' + pointsEarned);
+
 button.addEventListener('click', event => { 
   buttonClicked = !buttonClicked;
   if (buttonClicked) {
@@ -28,4 +34,12 @@ function finishedReading() {
   //turn button green
   button.src = redButton;
   //text box saved as a memo
+  //increment points
+  chrome.storage.sync.get(['points'], function(result) {
+    pointsEarned = result.points;
+  });
+  chrome.storage.sync.set({points: 0}, function() {
+    pointsEarned = pointsEarned + 10;
+    console.log('Value is set to ' + pointsEarned);
+});
 }
