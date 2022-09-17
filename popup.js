@@ -20,13 +20,13 @@ button.addEventListener('click', event => {
 
 function beginReading() {
   //turn button red
-  document.getElementById("button").src = redButton;
+  button.src = greenButton;
   //text box appears 
   alert("begin reading!");
 }
 
 function finishedReading() {
   //turn button green
-  document.getElementById("button").src = greenButton;
+  button.src = redButton;
   //text box saved as a memo
 }
