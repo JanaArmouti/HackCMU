@@ -1,39 +1,15 @@
-var currentWebsite = window.location.href
-
-function isArticle(currentWebsite){
-    var nameLen = currentWebsite.length
-    var pageBottom = false
-    
-    if (currentWebsite.startsWith("https://www.bbc.com/news")){
-        if (typeof currentWebsite[nameLen - 1] == Number){
-            window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
-                    alert("you're at the bottom of the page");
-                    pageBottom = true;
-                }
-            };
-        }
-    }
-
-    if (currentWebsite.startsWith("https://www.cnn.com")){
-        if (currentWebsite.endsWith("/index.html")){
-            window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
-                    alert("you're at the bottom of the page");
-                    pageBottom = true;
-                }
-            };
-        }
-    }
-
-    if (currentWebsite.startsWith("https://www.nbcnews.com")){
-        if (typeof currentWebsite[nameLen - 1] == Number){
-            window.onscroll = function(ev) {
-                if ((window.innerHeight + Math.ceil(window.pageYOffset + 1)) >= document.body.offsetHeight) && (pageBottom == false){
-                    alert("you're at the bottom of the page");
-                    pageBottom = true;
-                }
-            };
-        }
-    }
+console.log("background running");
+chrome.action.onClicked.addListener(setup);
+function setup() {
+noCanvas();
+let userinput = select('#userinput');
+userinput.input(sendText);
+function sendText() {
+//Value got from input field in popup
+let message = userinput.value();
+//Sending message to content
+chrome.tabs.query({active: true,currentWindow:true},function(tabs){
+chrome.tabs.sendMessage(tabs[0].id,message);
+});
+}
 }
