@@ -4,9 +4,9 @@ let button = document.getElementById("button");
 var buttonClicked = false;
 
 //Red button 
-var redButton = "https://images.app.goo.gl/ZybyzpXkXkd4bJrs7";
+var redButton = "off.png";
 //Green button
-var greenButton = "https://images.app.goo.gl/4P6wAEYt5W3WqfY5A";
+var greenButton = "on.png";
 
 button.addEventListener('click', event => { 
   buttonClicked = !buttonClicked;
@@ -22,6 +22,7 @@ function beginReading() {
   //turn button red
   document.getElementById("button").src = redButton;
   //text box appears 
+  alert("begin reading!");
 }
 
 function finishedReading() {
